@@ -17,7 +17,6 @@ ANS_015=137846528820
 ANS_016=1366
 ANS_017=21124
 
-ANS_021=31626
 
 HASKELL_RUN:=haskell/run
 MESSAGE="%s - Project Euler Problem %s\n\n"
@@ -54,6 +53,10 @@ php:
 	@printf $(MESSAGE) "PHP" $(NUM)
 	@time -p php -f "php/euler$(NUM).php"
 
+elixir:
+	@printf $(MESSAGE) "Elixir" $(NUM)
+	@time -p elixir "elixir/euler$(NUM).exs"
+
 py:
 	@printf $(MESSAGE) "Python" $(NUM)
 	@time -p python "python/euler$(NUM).py"
@@ -61,4 +64,4 @@ py:
 %:
 	@: # phony rule to quiet warning about no rule for 'number' argument
 
-.PHONY: answer bash clean clojure hs js lua php py %
+.PHONY: answer bash clean clojure hs js lua php py elixir %
